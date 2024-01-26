@@ -225,13 +225,61 @@ a:hover {
   }
 }
 
+.logo {
+  position: relative;
+}
+
+.logo img {
+  filter: invert(15%) sepia(50%) saturate(200%) hue-rotate(330deg) brightness(95%) contrast(80%);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease-out;
+}
+
+.logo:hover img {
+  transform: scale(1.1); /* Ajusta el nivel de escala según sea necesario */
+}
+.logo img {
+ filter: invert(15%) sepia(50%) saturate(200%) hue-rotate(330deg) brightness(95%) contrast(80%);  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease-out;
+}
+
+.logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  transition: background 0.3s ease-out;
+}
+
+.logo:hover img {
+  transform: scale(1.1); /* Ajusta el nivel de escala según sea necesario */
+}
+
+
+
 /*------/ Socials /------*/
 .socials {
-  padding: 1.5rem 0;
+  padding: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto; /* Esta línea empujará el contenedor hacia la parte inferior */
+}
+
+.socials ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .socials ul li {
   display: inline-block;
+  margin: 0 7.5px; /* Ajusta según sea necesario */
 }
 
 .socials .ico-circle {
@@ -240,7 +288,8 @@ a:hover {
   font-size: 1.2rem;
   border-radius: 50%;
   line-height: 1.6;
-  margin: 0 15px 0 0;
+  margin: 0;
+  padding: 5px;
   box-shadow: 0 0 0 3px #0078ff;
   transition: all 500ms ease;
 }
@@ -262,7 +311,6 @@ a:hover {
 .socials ul {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 0;
 }
 
 .list-ico {
@@ -629,6 +677,7 @@ a:hover {
  @media (max-width: 767px) {
     .box-contacts {
       margin-bottom: 15px; /* Ajusta el valor según sea necesario */
+	  text-align:center;
     }
   }
 
@@ -1532,6 +1581,8 @@ footer .credits a {
 .box-contacts-link a:hover {
 	color: #6689ff;
 }
+
+
 
 @media (min-width: 992px) {
 	.desktop .box-contacts {
